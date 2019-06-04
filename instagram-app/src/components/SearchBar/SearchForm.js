@@ -5,21 +5,23 @@ class SearchForm extends React.Component {
         comment: ''
     }
 
-    handleChanges = event => {
-        console.log(event.target.value);
 
-        // save comment on state
+    // Moved to CommentSection
+    // handleChanges = event => {
+    //     console.log(event.target.value);
 
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    };
+    //     // save comment on state
 
-    addComment = event => {
-        event.preventDefault();
-        this.props.addComment(this.state.comment)
-        this.setState({comment: ''})
-    }
+    //     this.setState({
+    //         [event.target.name]: event.target.value
+    //     });
+    // };
+
+    // addComment = event => {
+    //     event.preventDefault();
+    //     this.props.addComment(this.state.comment)
+    //     this.setState({comment: ''})
+    // }
 
     render() {
         return (

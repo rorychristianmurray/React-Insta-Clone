@@ -10,6 +10,23 @@ class App extends React.Component {
     data: dummyData,
   };
 
+
+// add a comment from the form to the list
+
+// addComment = comment => {
+//   const newComment = {
+//     text: comment,
+//     id: Date.now()
+//   }
+
+//   this.setState(prevState => {
+//     return {
+//       comment: [prevState.comment, newComment]
+//     };
+//   })
+// }
+
+
   render() {
     console.log('dummyData my guy', dummyData)
     
