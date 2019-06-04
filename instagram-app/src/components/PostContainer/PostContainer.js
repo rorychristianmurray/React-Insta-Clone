@@ -1,25 +1,29 @@
 import React from 'react';
 import './PostContainer.scss'
-import Post from './Post'
-import Comment from '../CommentSection/CommentSection'
+import CommentSection from '../CommentSection/CommentSection'
 
 const PostContainer = props => {
+    console.log('PostContainer props', props)
     return (
-        <div className="container">
-        <div className="row">
-            <div className="col post-container">{props.data.map(post => {
-                return <Post post={post} />
-            })}
+        <div className="container post-container">
+        <div className="row post-row">
+            <div className="col post-content">
+                Username: <span>{props.post.username}</span>
             </div>
-            <div className="col comment-container">{props.data.map(post => {
-            return <Comment post={post} />
+            <div className="col post-content">
+                <img src={props.post.imageUrl} ref={props.username}></img>
+
+            </div>
+            <div className="col">
+            {props.post.comments.map(comment => {
+             return <CommentSection comment={comment} />
             })}
+
             </div>
         </div>
         </div>
 
     );
-
 }
 
-export default PostContainer;
+export default PostContainer; 

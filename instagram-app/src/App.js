@@ -15,9 +15,8 @@ class App extends React.Component {
     
     return (
       <div className="App">
-        <h1>Placeholder Capital</h1>
         <SearchBar />
-        <PostContainer data={this.state.data} />
+        <div className="container post-container">{this.state.data.map(post => <PostContainer post={post} />)}</div>
       </div>
     );
     
