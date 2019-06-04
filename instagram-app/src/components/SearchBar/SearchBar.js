@@ -8,9 +8,7 @@ const SearchBar = props => {
             <div className="col search-bar">Search Bar</div>
         </div>
         </div>
-
     );
-
 }
 
 export default SearchBar;

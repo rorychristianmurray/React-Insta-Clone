@@ -7,14 +7,11 @@ const Post = props => {
         <div className="container">
         <div className="row">
             <div className="col post">
-            {/* <PostHeader /> */}
             <div>
                 
                 Username: <span>{props.post.username}</span>
 
             </div>
-            {/* <PostImage />
-            <PostComment /> */}
             </div>
         </div>
         </div>
