@@ -1,0 +1,14 @@
+.post-container {
+    border: 1px solid fuchsia;
+    flex-direction: column;
+
+}
+
+.post-row {
+    flex-direction: column;
+}
+
+.post-content {
+    color: darkblue;
+    border: 1px solid red;
+}
