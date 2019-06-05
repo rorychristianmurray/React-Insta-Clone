@@ -14,7 +14,6 @@ class CommentSection extends React.Component {
             
     componentDidMount() {
         this.setState({comments: this.props.comments})
-
     }
 
     handleChanges = event => {
