@@ -32,14 +32,9 @@ class PostImage extends React.Component {
         }
 
         this.setState({
-            likes: this.state.likes - 1,
+            likes: this.state.likes + 1,
             liked: !this.state.liked
         })
-
-        this.setState({
-            ...this.state,
-            likes: this.state.likes + 1
-        });
     }
     
     
@@ -50,7 +45,7 @@ class PostImage extends React.Component {
             <div>FRANDZ: {this.state.likes}</div>
             <div id="post-icons">
             <FontAwesomeIcon icon={faComment} className="far fa-comment" />
-            {this.state.liked ? <FontAwesomeIcon icon={faHeart} onClick={this.toggleLike} className="fas fa-heart" />  : <FontAwesomeIcon icon={faHeartFilled} onClick={this.toggleLike} className="far fa-heart" />}
+            {this.state.liked ? <FontAwesomeIcon icon={faHeartFilled} onClick={this.incrementLike} className="far fa-heart" />  : <FontAwesomeIcon icon={faHeart} onClick={this.incrementLike} className="fas fa-heart" /> }
 
             </div>
             </div>
