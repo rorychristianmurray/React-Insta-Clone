@@ -4,7 +4,7 @@ const Comment = props => {
     console.log('Comment props', props)
     return(
         <div className="comment">
-        {props.comment.username}<span>{props.comment.text}</span></div>
+        Username: {props.comment.username}<span> Comment: {props.comment.text}</span></div>
     );
 
 }

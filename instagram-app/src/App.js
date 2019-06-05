@@ -5,15 +5,13 @@ import SearchBar from './components/SearchBar/SearchBar'
 import PostContainer from './components/PostContainer/PostContainer'
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
       data: []
     };
-  }
-
+  
 
  componentDidMount() {
+   console.log('App this.props.data', this.state.data)
    this.setState({data: dummyData})
  } 
 

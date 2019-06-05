@@ -1,32 +1,25 @@
 import React from 'react';
 import './PostContainer.scss';
 import CommentSection from '../CommentSection/CommentSection';
-import PropTypes from 'prop-types';
 import PostHeader from './PostHeader';
 import PostImage from './PostImage';
+import PropTypes from 'prop-types';
+
+const PostContainer = props => {
 
 
+// console.log('PostContainer props', props)
+return (
+    <div className="post-container">
+        <PostHeader profileThumbnail={props.post.thumbnailUrl} username={props.post.username} />
+        <PostImage image={props.post.imageUrl} />
+        <CommentSection comments={props.post.comments} />
+    </div>
+);
 
-
-class PostContainer extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-
-    
-    render() {
-        console.log('PostContainer props', this.props)
-        return (
-            <div className="post-container">
-                <PostHeader profileThumbnail={this.props.post.thumbnailUrl} username={this.props.post.username} />
-                <PostImage image={this.props.post.imageUrl} />
-                <CommentSection comments={this.props.post.comments} />
-            </div>
-    
-        );
-    }
 }
+
+
 
 // PostContainer.propTypes = {
 //     data: PropTypes.arrayOf(
