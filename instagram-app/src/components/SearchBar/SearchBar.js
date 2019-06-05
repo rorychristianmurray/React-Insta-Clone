@@ -13,9 +13,6 @@ const SearchBar = props => {
         <div className="container">
         <div className="row">
             <div className="col search-bar">Search Bar</div>
-
-       
-    
         </div>
         </div>
     );

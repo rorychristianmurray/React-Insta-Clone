@@ -8,11 +8,11 @@ import PropTypes from 'prop-types';
 const PostContainer = props => {
 
 
-// console.log('PostContainer props', props)
+console.log('PostContainer props', props)
 return (
     <div className="post-container">
         <PostHeader profileThumbnail={props.post.thumbnailUrl} username={props.post.username} />
-        <PostImage image={props.post.imageUrl} />
+        <PostImage image={props.post.imageUrl} likes={props.post.likes} />
         <CommentSection comments={props.post.comments} />
     </div>
 );
