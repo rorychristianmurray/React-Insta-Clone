@@ -1,42 +1,70 @@
 import React from 'react';
 import './CommentSection.scss';
-import SearchForm from '../SearchBar/SearchForm'
+import Comment from './Comment'
 
 class CommentSection extends React.Component {
-    state = {
-        newComment: ''
+        state = {
+            comments: [],
+            id: '',
+            username: 'raursaurus',
+            text: '',
+        };
+
+        // console.log('CommentSection this.state', state);
+            
+    componentDidMount() {
+        this.setState({comments: this.props.comments})
     }
 
     handleChanges = event => {
-        console.log('form changes',event.target.value);\
+        console.log('handleChanges event.target.name', event.target.name);
 
-        //save comment on state
         this.setState({
             [event.target.name]: event.target.value
-        })
+        });
     }
 
-    addComment = event => {
+    addComment = (event, index) => {
         event.preventDefault();
-        this.props.addComment(this.state.comment)
-        this.setState({comment: ''})
-    }
+        console.log('addComment event', event);
 
-    render() {
-        console.log('CommentSection props', props);
-        
-        return(
-        <div className="container">
-        <div className="row">
-            <div className="col comment">{props.comment.text}</div>
-            <SearchForm />
+        const newComment = {
+            id: this.state.comments.length + 1,
+            username: this.state.username,
+            text: this.state.text
+        };
+
+        this.setState({
+            comments: [...this.state.comments, newComment], // new array with added comment
+            id: '',
+            username: 'raursaurus',
+            text: '',
+        });
+    };
+
+render() {
+
+    console.log('CommentSection this.props.comments',this.props.comments)
+    return (
+        <div className="comment-section">
+        {this.state.comments.map(comment => {
+               return <Comment comment={comment} key={comment.id} /> })}
+            <div className="form">
+            <form onSubmit={this.addComment} className = 'comment-form'>
+                <input
+                    placeholder="pretty... pretty good"
+                    onChange={this.handleChanges}
+                    value={this.state.text}
+                    name="text"
+                 />  
+            <button className="btn">Add Comment</button>
+        </form>
+        </div> 
         </div>
-        </div>
-        )
-    }
+    )
 
 }
-
-
+}
 
 export default CommentSection;
+

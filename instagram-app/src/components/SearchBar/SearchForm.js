@@ -1,27 +1,28 @@
 import React from 'react';
 
 class SearchForm extends React.Component {
-    state = {
-        comment: ''
+    constructor(props) {
+        super(props)
+        this.state = {
+            searchTerm: ''
+        }
     }
 
 
-    // Moved to CommentSection
-    // handleChanges = event => {
-    //     console.log(event.target.value);
 
-    //     // save comment on state
+    handleChanges = event => {
+        console.log(event.target.value);
 
-    //     this.setState({
-    //         [event.target.name]: event.target.value
-    //     });
-    // };
+        // save comment on state
 
-    // addComment = event => {
-    //     event.preventDefault();
-    //     this.props.addComment(this.state.comment)
-    //     this.setState({comment: ''})
-    // }
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    };
+
+    handleSearch = () => {
+        this.props.search(this.state.search)
+    }
 
     render() {
         return (
