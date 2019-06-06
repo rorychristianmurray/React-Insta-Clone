@@ -2,12 +2,23 @@ import React from 'react'
 
 class Login extends React.Component {
     state = {
-
+        username: "",
+        password: ""
     }
 
-    render(){
+    login = event => {
+        localStorage.setItem("username", JSON.stringify(this.state.username))
+    };
+
+    handleChanges = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    render() {
         return(
-    <form className="login-form">
+    <form onSubmit={this.login} className="login-form">
         <input
         placeholder="username"
         type="text"
@@ -22,7 +33,6 @@ class Login extends React.Component {
         type="password"
         onChange={this.handleChanges}
         value={this.state.password}
-
         />
 
         <button onClick={this.login}>Hit it</button>

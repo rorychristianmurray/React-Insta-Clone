@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import PostsPage from './components/PostContainer/PostsPage';
 import withAuthenticate from './authentication/withAuthenticate'
+import Login from './components/Login/Login'
 
 const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
 
@@ -16,5 +17,5 @@ const App = () => {
   
 }
 
-export default App;
+export default withAuthenticate(PostsPage)(Login);
 
