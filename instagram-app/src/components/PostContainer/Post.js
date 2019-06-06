@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const PostContainer = props => {
 
 
-console.log('PostContainer props', props)
+console.log('Post props.comments', props.post.comments)
 return (
     <div className="post-container">
         <PostHeader profileThumbnail={props.post.thumbnailUrl} username={props.post.username} />

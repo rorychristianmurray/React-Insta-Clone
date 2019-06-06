@@ -12,8 +12,15 @@ class PostImage extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({comments: this.props.likes})
+        this.setState({likes: this.props.likes})
     }
+componentDidUpdate(prevProps) {
+    if(prevProps !== this.props) {
+        this.setState({likes: this.props.likes})
+
+    }
+
+}
     
     toggleLike = () => {
         this.setState({

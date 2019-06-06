@@ -1,4 +1,16 @@
+@font-face {
+    font-family:"Billabong";
+    src: url('../Billabong.ttf') format("truetype")
+  }
+
 .search-bar {
     color: red;
     border: 1px solid red;
+}
+
+.insta-icon {
+    color: red;
+    font-family: 'Billabong'
+
+    
 }

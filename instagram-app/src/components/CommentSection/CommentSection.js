@@ -11,9 +11,15 @@ class CommentSection extends React.Component {
         };
 
         // console.log('CommentSection this.state', state);
-            
+    
     componentDidMount() {
         this.setState({comments: this.props.comments})
+    }
+
+    componentDidUpdate(prevProps) {
+        if(prevProps !== this.props) {
+        this.setState({comments: this.props.comments})
+        }
     }
 
     handleChanges = event => {
@@ -38,7 +44,7 @@ class CommentSection extends React.Component {
             comments: [...this.state.comments, newComment], // new array with added comment
             id: '',
             username: 'raursaurus',
-            text: '',
+            text: ''
         });
     };
 
