@@ -1,4 +1,43 @@
+@font-face {
+    font-family:"Billabong";
+    src: url('../Billabong.ttf') format("truetype")
+  }
+
+
+  .search-row {
+      position: sticky;
+      top: 0;
+    //   z-index: 1;
+
+  }
+
+ .search-left-text {
+      font-size: 2.5rem;
+  }
+
 .search-bar {
-    color: red;
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
 }
+
+input {
+    vertical-align: middle;
+    text-align: center;
+    width: 250px;
+}
+
+.insta-icon {
+    font-family: 'Billabong'
+}
+
+.insta-links {
+    display: flex;
+    justify-content: center
+}
+
+.link {
+    margin: 15px;
+}
+
+

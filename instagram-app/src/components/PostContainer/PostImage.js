@@ -12,8 +12,15 @@ class PostImage extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({comments: this.props.likes})
+        this.setState({likes: this.props.likes})
     }
+componentDidUpdate(prevProps) {
+    if(prevProps !== this.props) {
+        this.setState({likes: this.props.likes})
+
+    }
+
+}
     
     toggleLike = () => {
         this.setState({
@@ -42,12 +49,6 @@ class PostImage extends React.Component {
         return(
             <div onClick={this.incrementLike}>
             <img className='post-image' src={this.props.image} ref='post image'/>
-            <div>FRANDZ: {this.state.likes}</div>
-            <div id="post-icons">
-            <FontAwesomeIcon icon={faComment} className="far fa-comment" />
-            {this.state.liked ? <FontAwesomeIcon icon={faHeartFilled} onClick={this.incrementLike} className="far fa-heart" />  : <FontAwesomeIcon icon={faHeart} onClick={this.incrementLike} className="fas fa-heart" /> }
-
-            </div>
             </div>
             )
         }

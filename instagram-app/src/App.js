@@ -3,6 +3,7 @@ import './App.css';
 import PostsPage from './components/PostContainer/PostsPage';
 import withAuthenticate from './authentication/withAuthenticate'
 import Login from './components/Login/Login'
+import { AppStyle } from './components/StyledComponents'
 
 const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
 
@@ -10,9 +11,12 @@ const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
 const App = () => {
 
     return (
-      <div className="App">
-        <ComponentFromWithAuthenticate />
-      </div>
+      // <AppStyle>
+        <div className="App">
+          <ComponentFromWithAuthenticate />
+        </div>
+      // </AppStyle>
+
     );
   
 }

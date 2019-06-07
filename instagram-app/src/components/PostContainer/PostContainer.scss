@@ -1,14 +1,48 @@
 .post-container {
-    border: 1px solid fuchsia;
     flex-direction: column;
-
 }
 
 .post-row {
     flex-direction: column;
 }
 
-.post-content {
-    color: darkblue;
-    border: 1px solid red;
+
+.post-header {
+    border: 1px solid lightgrey;
+    box-shadow: 0.25px 0.25px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+}
+
+.thumbnail {
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    border: 3px solid #E1306C;
+    padding: 2px;
+}
+
+.username {
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.post-icons {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1rem;
+    align-items: center;
+}
+
+.post-icon {
+    margin: 5px 10px;
+}
+
+.frandz {
+    margin: 5px 5px;
 }
