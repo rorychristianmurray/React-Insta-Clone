@@ -62,6 +62,7 @@ render() {
                     onChange={this.handleChanges}
                     value={this.state.text}
                     name="text"
+                    className="comment-input"
                  />  
             <button className="btn">Add Comment</button>
         </form>

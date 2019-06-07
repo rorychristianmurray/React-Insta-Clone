@@ -4,6 +4,7 @@ import CommentSection from '../CommentSection/CommentSection';
 import PostHeader from './PostHeader';
 import PostImage from './PostImage';
 import PropTypes from 'prop-types';
+import PostFooter from './PostFooter';
 
 const PostContainer = props => {
 
@@ -13,6 +14,7 @@ return (
     <div className="post-container">
         <PostHeader profileThumbnail={props.post.thumbnailUrl} username={props.post.username} />
         <PostImage image={props.post.imageUrl} likes={props.post.likes} />
+        <PostFooter likes={props.post.likes} />
         <CommentSection comments={props.post.comments} />
     </div>
 );

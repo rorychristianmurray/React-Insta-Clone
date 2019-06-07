@@ -3,10 +3,14 @@ import React from 'react'
 class Login extends React.Component {
     state = {
         username: "",
-        password: ""
+        password: "",
+        errors: ""
     }
 
     login = event => {
+        if(!this.state.username){
+            this.setState({errors: 'please enter a username'})
+        } 
         localStorage.setItem("username", JSON.stringify(this.state.username))
     };
 
